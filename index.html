@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Data and AJAX</title>
+    <style media="screen">
+      #profiles{
+        width: 1210px;
+        height: 100%;
+        margin: 0 auto;
+      }
+      .info{
+        width: 300px;
+        height: 335px;
+        border: 1px solid #efefef;
+        float: left;
+      }
+      .img, .img img{
+        width: 250px;
+        height: 250px;
+        margin: 8px auto;
+      }
+      .btn{
+        width: 250px;
+        height: 25px;
+        margin: 24px;
+      }
+      .description{
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+
+    <section id="profiles">
+      <div class="info">
+        <div class="img">
+          <img src="img/one.jpg" alt="">
+        </div>
+        <button class="btn" id="one" type="button" name="button">info</button>
+      </div>
+
+
+      <div class="info">
+        <div class="img">
+          <img src="img/two.png" alt="">
+        </div>
+        <button class="btn" id="two" type="button" name="button">info</button>
+      </div>
+
+
+      <div class="info">
+        <div class="img">
+          <img src="img/three.png" alt="">
+        </div>
+        <button class="btn" id="three" type="button" name="button">info</button>
+      </div>
+
+
+      <div class="info">
+        <div class="img">
+          <img src="img/four.jpg" alt="">
+        </div>
+        <button class="btn" id="four" type="button" name="button">info</button>
+      </div>
+
+      <aside class="description"></aside>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    // src: https://www.lynda.com/MyPlaylist/Watch/2776697/155364?autoplay=true
+      $(".btn").on("click", function(){
+
+        var $desc = $(".description");
+
+        switch($(this).attr("id")){
+
+          case "one":
+          $desc.load("partials/one.html");
+          break;
+
+          case "two":
+          $desc.load("partials/two.html");
+          break;
+
+          case "three":
+          $desc.load("partials/three.html");
+          break;
+
+          case "four":
+          $desc.load("partials/four.html");
+          break;
+          
+        };
+
+      });
+    </script>
+
+  </body>
+</html>
